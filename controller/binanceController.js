@@ -12,7 +12,60 @@ const getDataPriceSymbol = async(req = request, res = response) => {
         let ticker = await binance.prices();
         // console.info(`Price of BNB: ${ticker.BNBUSDT}`);
 
-        res.json({ ok: true, message: 'Se obtiene la data desde el server', ticker });
+        let records =[
+            {
+                "name" : "Bitcoin",
+                "price" : ticker.BTCUSDT,
+                "symbol": "BTC"
+            },
+            {
+                "name" : "Ethereum",
+                "price" : ticker.ETHUSDT,
+                "symbol": "ETH"
+            },
+            {
+                "name" : "Binanco Coin",
+                "price" : ticker.BNBUSDT,
+                "symbol": "BNB"
+            },
+            {
+                "name" : "Cardano",
+                "price" : ticker.ADAUSDT,
+                "symbol": "ADA"
+            },
+            {
+                "name" : "Solana",
+                "price" : ticker.SOLUSDT,
+                "symbol": "SOL"
+            },
+            {
+                "name" : "XRP",
+                "price" : ticker.XRPUSDT,
+                "symbol": "XRP"
+            },
+            {
+                "name" : "Polkadot",
+                "price" : ticker.DOTUSDT,
+                "symbol": "DOT"
+            },
+            {
+                "name" : "Dogecoin",
+                "price" : ticker.DOGEUSDT,
+                "symbol": "DOGE"
+            },
+            {
+                "name" : "Shiba Inu",
+                "price" : ticker.SHIBUSDT,
+                "symbol": "SHIB"
+            },
+            {
+                "name" : "Axie Infinity",
+                "price" : ticker.AXSUSDT,
+                "symbol": "AXS"
+            }
+        ] 
+
+        res.json({ ok: true, message: 'Se obtiene la data desde el server', records });
 
     } catch (error) {
         console.log(error);
