@@ -20,23 +20,6 @@ const getDataPriceSymbol = async(req = request, res = response) => {
     }
 };
 
-
-const getlistcurrentBalances = async(req = request, res = response) => {
-    try {
-        binance.balance((error, balances) => {
-            if (error) {
-                return res.status(404).json({ message: 'Bad Request' });
-            }
-            console.info("balances()", balances);
-            console.info("ETH balance: ", balances.ETH.available);
-        });
-
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: 'Error en la petición' })
-    }
-};
-
 const getBidPricesForASymbol = async(req = request, res = response) => {
 
     const id = req.params.id;
@@ -77,7 +60,6 @@ const getBidForAllSymbols = async(req = request, res = response) => {
 
 module.exports = {
     getDataPriceSymbol,
-    getlistcurrentBalances,
     getBidPricesForASymbol,
     getBidForAllSymbols
 };
