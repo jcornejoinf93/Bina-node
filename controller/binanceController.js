@@ -12,58 +12,67 @@ const getDataPriceSymbol = async(req = request, res = response) => {
         let ticker = await binance.prices();
         // console.info(`Price of BNB: ${ticker.BNBUSDT}`);
 
-        let records =[
-            {
-                "name" : "Bitcoin",
-                "price" : ticker.BTCUSDT,
-                "symbol": "BTC"
+        let records = [{
+                "name": "Bitcoin",
+                "price": ticker.BTCUSDT,
+                "symbol": "BTC",
+                "favorito": false
             },
             {
-                "name" : "Ethereum",
-                "price" : ticker.ETHUSDT,
-                "symbol": "ETH"
+                "name": "Ethereum",
+                "price": ticker.ETHUSDT,
+                "symbol": "ETH",
+                "favorito": false
             },
             {
-                "name" : "Binanco Coin",
-                "price" : ticker.BNBUSDT,
-                "symbol": "BNB"
+                "name": "Binanco Coin",
+                "price": ticker.BNBUSDT,
+                "symbol": "BNB",
+                "favorito": false
             },
             {
-                "name" : "Cardano",
-                "price" : ticker.ADAUSDT,
-                "symbol": "ADA"
+                "name": "Cardano",
+                "price": ticker.ADAUSDT,
+                "symbol": "ADA",
+                "favorito": false
             },
             {
-                "name" : "Solana",
-                "price" : ticker.SOLUSDT,
-                "symbol": "SOL"
+                "name": "Solana",
+                "price": ticker.SOLUSDT,
+                "symbol": "SOL",
+                "favorito": false
             },
             {
-                "name" : "XRP",
-                "price" : ticker.XRPUSDT,
-                "symbol": "XRP"
+                "name": "XRP",
+                "price": ticker.XRPUSDT,
+                "symbol": "XRP",
+                "favorito": false
             },
             {
-                "name" : "Polkadot",
-                "price" : ticker.DOTUSDT,
-                "symbol": "DOT"
+                "name": "Polkadot",
+                "price": ticker.DOTUSDT,
+                "symbol": "DOT",
+                "favorito": false
             },
             {
-                "name" : "Dogecoin",
-                "price" : ticker.DOGEUSDT,
-                "symbol": "DOGE"
+                "name": "Dogecoin",
+                "price": ticker.DOGEUSDT,
+                "symbol": "DOGE",
+                "favorito": false
             },
             {
-                "name" : "Shiba Inu",
-                "price" : ticker.SHIBUSDT,
-                "symbol": "SHIB"
+                "name": "Shiba Inu",
+                "price": ticker.SHIBUSDT,
+                "symbol": "SHIB",
+                "favorito": false
             },
             {
-                "name" : "Axie Infinity",
-                "price" : ticker.AXSUSDT,
-                "symbol": "AXS"
+                "name": "Axie Infinity",
+                "price": ticker.AXSUSDT,
+                "symbol": "AXS",
+                "favorito": false
             }
-        ] 
+        ]
 
         res.json({ ok: true, message: 'Se obtiene la data desde el server', records });
 
